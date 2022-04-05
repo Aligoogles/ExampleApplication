@@ -39,10 +39,10 @@ jobs:
             - ./node_modules
       - run:
           name: audit-packages
-          command: npm run test
+          command: npm audit
       - run:
           name: test-run
-          command: npm audit
+          command: npm run test
       - run:
           name: docker-login
           command: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
